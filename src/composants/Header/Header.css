@@ -10,6 +10,13 @@
     color: var(--secondary);
 
 }
+.orange-circle{
+    height: 4rem;
+    width: 4rem;
+    background: var(--orange-gradient);
+    border-radius: 999px;
+    position: absolute;
+}
 
 .h-menu{
     gap: 2rem;

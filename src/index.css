@@ -59,6 +59,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  
 }
 .flexColEnd {
   display: flex;
