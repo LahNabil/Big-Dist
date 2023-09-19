@@ -3,21 +3,21 @@ import { MdCancel, MdAnalytics } from "react-icons/md";
 const data = [
   {
     icon: <HiShieldCheck/>,
-    heading: "Best interest rates on the market",
+    heading: "Diagnostic Expert et Conseils Personnalisés",
     detail:
-      "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+      "Notre équipe d'experts en batteries est équipée des connaissances nécessaires pour diagnostiquer l'état de votre batterie de véhicule, Sur la base de nos diagnostics, nous vous conseillerons sur la batterie qui convient le mieux à votre véhicule ou à vos besoins spécifiques.",
   },
   {
     icon: <MdCancel />,
-    heading: "Prevent unstable prices",
+    heading: "Vente au Détail, en Gros et Plus",
     detail:
-      "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+      "Notre entreprise offre des options de vente au détail pour les clients individuels et des solutions en gros pour les entreprises."
   },
   {
     icon: <MdAnalytics />,
-    heading: "Best price on the market",
+    heading: "Livraison dans Tout le Maroc",
     detail:
-      "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+      "Nous livrons nos produits dans n'importe quelle ville au Maroc, offrant une commodité totale à nos clients, Profitez de notre service de livraison fiable pour recevoir rapidement les batteries dont vous avez besoin, où que vous soyez au Maroc.",
   },
 ];
 export default data;
