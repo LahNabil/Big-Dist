@@ -1,0 +1,84 @@
+.f-wrapper {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .f-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .f-contact, .f-services, .f-contact-info {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .f-contact h3, .f-services h3, .f-contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  h2{
+    margin-bottom: 20px;
+  }
+  
+  .f-contact p, .f-services ul, .f-contact-info p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .f-services ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .f-services li {
+    margin-bottom: 10px;
+  }
+  
+  .f-social-media {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .f-social-media h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .f-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .f-icons a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .f-icons a:hover {
+    color: #007bff; /* Couleur au survol (bleu par exemple) */
+  }
+  
+  .f-copy {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  
+  /* Médias Query pour la mise en page mobile */
+  @media (max-width: 768px) {
+    .f-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .f-contact, .f-services, .f-contact-info {
+      margin-bottom: 30px;
+    }
+  }

@@ -8,8 +8,7 @@ const Header = () => {
             <img src="./logo-big-dist.png" logo="logo big" width={100}/>
             <div className="flexCenter h-menu">
                 <a href="">Batteries</a>
-                <a href=''>Our values</a> 
-                <a href=''>Get Started</a> 
+                <a href=''>About Us</a> 
                 <button className='button'>
                 <a href=''>Contact</a>   
                 </button>  
