@@ -1,0 +1,72 @@
+.card-container {
+    margin-top: 5%;
+    display: grid;
+    
+    grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne */
+    gap: 20px;
+  }
+  
+  /* Styles pour chaque carte */
+  .card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    width: 85%;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .card p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  /* Styles pour les prix */
+  .card .price {
+    font-weight: bold;
+    color: #e53935; /* Couleur du prix */
+  }
+  
+  /* Styles pour les boutons, par exemple un bouton "Acheter" */
+  .card .btn {
+    display: block;
+    background-color: #007bff; /* Couleur du bouton */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .card .btn:hover {
+    background-color: #0056b3; /* Couleur au survol du bouton */
+  }
+  
+  /* Styles pour la garantie, par exemple une étiquette "Garantie 1 an" */
+  .card .warranty {
+    background-color: #fbc02d; /* Couleur de la garantie */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+  }

@@ -1,7 +1,8 @@
 import './App.css'
 import Home from "./pages/Home"
-import AboutUs from "./pages/AboutUs"
+import About from "./pages/About"
 import ContactUs from "./pages/ContactUs"
+import Liste_Batterie from './pages/Liste_Batterie';
 import{
   createBrowserRouter,
   RouterProvider,
@@ -9,14 +10,19 @@ import{
   Link
 } from "react-router-dom";
 
+
 const router = createBrowserRouter([
   {
     path:"/",
     element:<Home/>
   },
   {
+    path:"/batteries",
+    element: <Liste_Batterie/>
+  },
+  {
     path:"/aboutUs",
-    element:<AboutUs/>
+    element:<About/>
   },
   {
     path:"/contactUs",

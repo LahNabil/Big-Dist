@@ -38,8 +38,8 @@ const Batteries = () => {
                         <div className='flexColStart r-card'>
                             <img src={battery.image} alt="battery" />
                             <span className="secondaryText r-price">
-                            <span>{battery.prix}</span>
-                            <span style={{color: "orange"}}> DH</span>
+                            
+                            
                             </span>
 
                             <span className='primaryText'>
