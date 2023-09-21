@@ -21,6 +21,7 @@ const Contact = () => {
                                 </div>
                                 <div className="flexColstart detail">
                                     <span className='primaryText'>Appel</span>
+                                    <br/>
                                     <span className='secondaryText'>+212 6 XX XX XX XX</span>
                                 </div>
                             </div>
@@ -33,6 +34,7 @@ const Contact = () => {
                                 </div>
                                 <div className="flexColstart detail">
                                     <span className='primaryText'>Message</span>
+                                    <br/>
                                     <span className='secondaryText'>+212 6 XX XX XX XX</span>
                                 </div>
                             </div>
@@ -42,7 +44,7 @@ const Contact = () => {
                 </div>           
             </div>
             <div className="c-right">
-                <div className="image-container">
+                <div className="c-image-container">
                     <img src='./contact.png' alt='image-contact'/>
                 </div>
             </div>

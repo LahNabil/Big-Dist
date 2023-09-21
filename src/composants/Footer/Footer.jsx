@@ -21,9 +21,11 @@ const Footer = () => {
         </div>
         <div className='f-contact-info'>
           <h2>Coordonnées</h2>
-          <p>Téléphone : 06 11 58 67 23</p>
-          <p>Adresse : LOTISSEMENT AL IZDIHAR N 303</p>
-          <p>Email : bigdist@gmail.com</p>
+          <ul>
+          <li>Téléphone : 06 11 58 67 23</li>
+          <li>Adresse : LOTISSEMENT AL IZDIHAR N 303</li>
+          <li>Email : bigdist@gmail.com</li>
+          </ul>
         </div>
       </div>
     </footer>

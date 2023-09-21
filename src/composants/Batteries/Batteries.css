@@ -1,6 +1,9 @@
 .r-container{
     overflow: hidden;
     position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: 3%;
 }
 .r-head{
     margin-bottom: 2rem;

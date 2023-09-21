@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css'
+import {Link} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,8 +8,10 @@ const Header = () => {
         <div className='flexCenter paddings innnerWidth h-container'>
             <img src="./logo-big-dist.png" logo="logo big" width={100}/>
             <div className="flexCenter h-menu">
-                <a href="">Batteries</a>
-                <a href=''>About Us</a> 
+                
+                 <Link to="/batteries">Batteries</Link> 
+                 <Link to="/aboutUs">À propos de nous</Link> 
+                 <Link to="/contactUs">Contactez-nous</Link> 
                 <button className='button'>
                 <a href=''>Contact</a>   
                 </button>  

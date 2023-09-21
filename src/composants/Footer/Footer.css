@@ -34,6 +34,15 @@
     list-style: none;
     padding: 0;
   }
+  .f-contact-info ul{
+    
+        list-style: none;
+        padding: 0;
+      
+  }
+  .f-contact-info li {
+    margin-bottom: 10px;
+  }
   
   .f-services li {
     margin-bottom: 10px;

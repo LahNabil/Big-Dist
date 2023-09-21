@@ -12,8 +12,8 @@ const Hero = () => {
                 <div className="hero-title">
                     <div className="orange-circle"/>
                     <h1>
-                        Découvrez la Différence:<br/>
-                        Nos Batteries<br/>
+                        Explorez Notre Univers <br/>
+                        de Batteries<br/>
                         de Qualité
                     </h1>
                 </div>

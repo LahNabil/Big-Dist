@@ -4,11 +4,14 @@
     padding-bottom: 2rem;
     background-color: var(--black);
     
+    
 }
 
 .hero-container{
     justify-content: space-between;
     align-items: flex-end;
+    width: 90%;
+    margin: auto;
 }
 .hero-left{
     gap: 3rem;

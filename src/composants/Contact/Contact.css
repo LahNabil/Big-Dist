@@ -50,3 +50,15 @@
     color: white;
     scale: 0.8;
 }
+.c-image-container{
+    width: 30rem;
+    height: 35rem;
+    overflow: hidden;
+    border-radius: 15rem 15rem 0 0;
+    border: 8px solid rgba(255,255,255,0.12);
+}
+.c-image-container>img{
+    width: 100%;
+    height: 100%;
+
+}
