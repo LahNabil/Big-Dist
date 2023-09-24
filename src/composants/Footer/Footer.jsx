@@ -28,6 +28,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <div className="r-right">
+        @BigDist 2023-2024
+      </div>
     </footer>
   );
 };

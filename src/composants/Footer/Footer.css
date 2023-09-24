@@ -91,3 +91,9 @@
       margin-bottom: 30px;
     }
   }
+  .r-right{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    font-size: 0.8rem;
+  }
