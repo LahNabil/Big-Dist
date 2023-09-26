@@ -22,7 +22,7 @@ const Contact = () => {
                                 <div className="flexColstart detail">
                                     <span className='primaryText'>Appel</span>
                                     <br/>
-                                    <span className='secondaryText'>+212 6 XX XX XX XX</span>
+                                    <span className='secondaryText'>+212 6 11 58 67 23</span>
                                 </div>
                             </div>
                             <div className="flexCenter button">Call Now</div>
@@ -35,7 +35,7 @@ const Contact = () => {
                                 <div className="flexColstart detail">
                                     <span className='primaryText'>Message</span>
                                     <br/>
-                                    <span className='secondaryText'>+212 6 XX XX XX XX</span>
+                                    <span className='secondaryText'>+212 6 11 58 67 23</span>
                                 </div>
                             </div>
                             <div className="flexCenter button">Call Now</div>
