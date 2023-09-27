@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import {Swiper, SwiperSlide,useSwiper} from 'swiper/react'
+import SwiperCore, { Autoplay } from 'swiper';
 import "swiper/css"
 import { sliderSettings } from '../../utils/common'
 
 import "./Batteries.css" 
-
+SwiperCore.use([Autoplay]);
 
 const Batteries = () => {
     const [batteries, setBatteries] = useState([]);
@@ -31,7 +32,7 @@ const Batteries = () => {
                 <span className="orangeText">Meilleurs choix</span>
                 <span className='primaryText'>Liste des Batteries</span>
             </div>
-            <Swiper {...sliderSettings}>
+            <Swiper {...sliderSettings} autoplay={{ delay: 3000}}>
                 <SliderButtons/>
                 {batteries.map((battery, i) => (
                     <SwiperSlide key={i}>

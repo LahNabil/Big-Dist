@@ -55,3 +55,17 @@
     height: 100%;
 
 }
+@media (max-width: 1024px){
+    .v-container{
+        flex-direction: column;
+    }
+    @media(max-width: 768px){
+        .accordionButton .primaryText{
+            font-size: 0.8rem;
+        }
+        .h-image-container{
+            width: 95%;
+            height: 25rem;
+        }
+    }
+}

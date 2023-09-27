@@ -29,7 +29,7 @@ const Header = () => {
                  <Link to="/aboutUs">À propos de nous</Link> 
                  <Link to="/contactUs">Contactez-nous</Link> 
                 <button className='button'>
-                <a href='www.facebook.com'>Contact</a>   
+                <a href='https://www.facebook.com.com' target='_blank'>Contact</a>   
                 </button> 
                  
             </div>
