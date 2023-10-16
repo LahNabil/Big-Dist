@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import ContactUs from "./pages/ContactUs"
 import Liste_Batterie from './pages/Liste_Batterie';
+import BatteryDetails from './pages/BatteryDetails'
 import{
   createBrowserRouter,
   RouterProvider,
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path:"/aboutUs",
     element:<About/>
+  },
+  {
+    path:"/batterydetails/:batteryId",
+    element:<BatteryDetails/>
   },
   {
     path:"/contactUs",
