@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import './Battery.css'; // Assurez-vous d'ajouter un fichier CSS séparé
+import './Battery.css'; 
 
 const Battery = () => {
   const { batteryId } = useParams();

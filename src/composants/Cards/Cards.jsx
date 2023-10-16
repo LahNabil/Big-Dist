@@ -37,7 +37,7 @@ const Cards = () => {
   return (
     <div className="card-container" onClick={() => handleCardClick(battery.id)}>
       {batteries.map((battery) => (
-        <div key={battery.id} className="card">
+        <div key={battery.id} className="card" onClick={() => navigate(`/batterydetails/${battery.numB}`)}>
             <p className='primaryText'>Référence : {battery.reference}</p>
             <img src={battery.image} alt={`Batterie ${battery.marque}`} />
             <h3>{battery.marque}</h3>
