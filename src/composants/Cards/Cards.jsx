@@ -1,8 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import './Cards.css'
+import { useNavigate } from 'react-router-dom';
+
+
+
+
 
 
 const Cards = () => {
+  
+
+    const navigate = useNavigate();
+
+    const handleCardClick = (batteryId) => {
+      // Utilisez la fonction navigate pour naviguer vers la page de détails avec l'ID de la batterie
+      navigate(`/battery-details/${batteryId}`);
+    };
+    
     const [batteries, setBatteries] = useState([]);
     useEffect(() => {
         
@@ -21,7 +35,7 @@ const Cards = () => {
           });
       }, []);
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={() => handleCardClick(battery.id)}>
       {batteries.map((battery) => (
         <div key={battery.id} className="card">
             <p className='primaryText'>Référence : {battery.reference}</p>

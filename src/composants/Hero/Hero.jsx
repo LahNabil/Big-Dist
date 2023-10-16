@@ -4,6 +4,8 @@ import {HiLocationMarker} from 'react-icons/hi'
 import CountUp from 'react-countup'
 import { TweenMax, Power3 } from 'gsap'
 import { Tween } from 'gsap/gsap-core'
+import { FcElectricity } from 'react-icons/fc';
+
 
 const Hero = () => {
     let logoItem = useRef(null)
@@ -52,9 +54,9 @@ const Hero = () => {
                 </div>
 
                 <div className="flexCenter search-bar">
-                    <HiLocationMarker color="blue" size={25}/>
+                    <FcElectricity color="blue" size={25}/>
                     <input type="text" />
-                    <button className="button">Search</button>
+                    <button className="button" onClick={()=>window.location.href="/batteries"}>Search</button>
                 </div>
                 <div className="flexCenter stats">
                     <div className="flexColCenter stat">
