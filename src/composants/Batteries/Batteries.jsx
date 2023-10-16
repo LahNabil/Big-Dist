@@ -3,6 +3,7 @@ import {Swiper, SwiperSlide,useSwiper} from 'swiper/react'
 import SwiperCore, { Autoplay } from 'swiper';
 import "swiper/css"
 import { sliderSettings } from '../../utils/common'
+import { Link } from 'react-router-dom';
 
 import "./Batteries.css" 
 SwiperCore.use([Autoplay]);
@@ -36,6 +37,7 @@ const Batteries = () => {
                 <SliderButtons/>
                 {batteries.map((battery, i) => (
                     <SwiperSlide key={i}>
+                      <Link to={`/batterydetails/${battery.numB}`}>
                         <div className='flexColStart r-card'>
                             <img src={battery.image} alt="battery" />
                             <span className="secondaryText r-price">
@@ -48,6 +50,7 @@ const Batteries = () => {
                             </span>
                             <span className='primaryText'>{battery.marque}</span>
                         </div>
+                        </Link>
                     </SwiperSlide>
             ))}
 </Swiper>
