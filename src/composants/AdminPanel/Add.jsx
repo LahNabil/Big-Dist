@@ -11,7 +11,7 @@ export default function Add() {
   const [reference, setReference] = useState('');
   const [prix, setPrix] = useState('');
   const [garantie, setGarantie] = useState('');
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState();
   const paperStyle = { padding: '50px 20px', width: 600, margin: '20px auto' };
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -19,7 +19,14 @@ export default function Add() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const battery = { marque, reference, prix, garantie };
+    const battery = { marque, reference, prix, garantie,image };
+    console.log(marque,reference,prix,garantie,image);
+  //   const formData = new FormData();
+  //         formData.append('marque', marque);
+  // formData.append('reference', reference);
+  // formData.append('prix', prix);
+  // formData.append('garantie', garantie);
+  // formData.append('image', image);
 
     try {
       const response = await fetch('http://localhost:8084/batteries/add', {
@@ -36,6 +43,7 @@ export default function Add() {
         setReference('');
         setPrix('');
         setGarantie('');
+        setImage('');
       } else {
         throw new Error('Error adding Battery');
       }
@@ -89,18 +97,17 @@ export default function Add() {
             value={garantie}
             onChange={(e) => setGarantie(e.target.value)}
           />
-          <input
-            accept="image/*"
-            style={{ display: 'none' }}
-            id="contained-button-file"
-            type="file"
-            onChange={(e) => setImage(e.target.files[0])}
-            />
-<label htmlFor="contained-button-file">
-  <Button variant="outlined" component="span">
-    Upload Image
-  </Button>
-</label>
+          <TextField
+            id="image"
+            label="image de la Batterie"
+            variant="outlined"
+            fullWidth
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+            
+            
+
 
           <Button variant="contained" onClick={handleClick}>
             Add

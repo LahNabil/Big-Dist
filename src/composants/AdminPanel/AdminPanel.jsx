@@ -10,18 +10,9 @@ const AdminPanel = () => {
   const [batteries, setBatteries] = useState([]);
   const [editBattery, setEditBattery] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
-  const [deletingBatteryId, setDeletingBatteryId] = useState(null);
+  
 
-  const handleEdit = (batteryId) => {
-    // Find the battery to edit based on batteryId
-    const batteryToEdit = batteries.find((battery) => battery.numB === batteryId);
-
-    if (batteryToEdit) {
-      setEditBattery(batteryToEdit);
-      setIsEditing(true);
-    }
-  };
+  
  
   const handleDelete = (batteryId) => {
     // Display the confirmation dialog
@@ -47,7 +38,15 @@ const AdminPanel = () => {
         });
     }
   };
-  
+  const handleEdit = (batteryId) => {
+    // Find the battery to edit based on batteryId
+    const batteryToEdit = batteries.find((battery) => battery.numB === batteryId);
+
+    if (batteryToEdit) {
+      setEditBattery(batteryToEdit);
+      setIsEditing(true);
+    }
+  };
   
 
   const handleSaveEdit = () => {
@@ -117,6 +116,11 @@ const AdminPanel = () => {
           />
           <input
             type="text"
+            value={editBattery.image}
+            onChange={(e) => setEditBattery({ ...editBattery, image: e.target.value })}
+          />
+          <input
+            type="text"
             value={editBattery.garantie}
             onChange={(e) => setEditBattery({ ...editBattery, garantie: e.target.value })}
           />
@@ -137,6 +141,7 @@ const AdminPanel = () => {
                 <th>Référence</th>
                 <th>Prix</th>
                 <th>Garantie</th>
+                <th>Image</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -147,6 +152,7 @@ const AdminPanel = () => {
                   <td>{battery.marque}</td>
                   <td>{battery.reference}</td>
                   <td>{battery.prix} DH</td>
+                  <td>{battery.image}</td>
                   <td>{battery.garantie}</td>
                   <td>
                     <Button variant="contained" onClick={() => handleEdit(battery.numB)}>Edit</Button>
