@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Importez BrowserRouter
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -9,10 +10,12 @@ import BatteryDetails from './pages/BatteryDetails';
 import AdminPanel from './pages/Panel';
 import Edit from './pages/Modifier';
 import Ajouter from './pages/Ajouter';
-import Login from './composants/Auth/Login';
-
+import Auth from './pages/Auth';
 
 function App() {
+  
+
+  const [token, setToken] = useState(localStorage.getItem('token'))
   return (
     <div className="app">
       <BrowserRouter>
@@ -21,13 +24,31 @@ function App() {
           <Route path="/batteries" element={<Liste_Batterie />} />
           <Route path="/aboutUs" element={<About />} />
           <Route path="/batterydetails/:batteryId" element={<BatteryDetails />} />
+          <Route path="/login" element={<Auth />} />
+          {/* {localStorage.clear()}
+          {
+            token == null ?
+            <Route path="/login" element={<Login />} />
+            :
+            <>
+            <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/admin/add" element={<Ajouter />} />
+            <Route path="/admin/edit" element={<Edit />} />
+            </>
+          } */}
           
-          <Route path="/admin" element={<AdminPanel />} />
+          <Route
+            path="/admin"
+            element={token != null ? <AdminPanel /> : <Auth />}
+          />
+          <Route 
+            path="/admin/add"
+           element={token != null ? <Ajouter /> : <Auth />}
+           />
+          <Route path="/admin/edit"
+           element={token != null ? <Edit /> : <Auth/>}
+           />
           
-          
-          <Route path="/admin/edit" element={<Edit />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin/add" element={<Ajouter />} />
           <Route path="/contactUs" element={<ContactUs />} />
         </Routes>
       </BrowserRouter>

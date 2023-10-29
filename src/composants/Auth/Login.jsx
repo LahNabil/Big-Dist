@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import App from '../../App'; 
+import './Login.css'
 
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  const [isLogin, setIslogin] = useState(false);
 
-  const handleLogin = async () => {
+  const handleUsernameChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
+      // Send a POST request to your backend for authentication
       const response = await fetch('http://localhost:8084/authenticate', {
         method: 'POST',
         headers: {
@@ -15,42 +26,69 @@ function Login() {
         },
         body: JSON.stringify({ email, password }),
       });
+        
 
-      if (response.ok) {
-        navigate("/admin");
+      if (response.status === 403) {
+        console.log('Authentication failed: Forbidden');
+        return;
+      }
+
+      else if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('token', data.token);
+        console.log(localStorage.getItem("token"));
+        console.log("data:" + data);
+        setIslogin(true);
+        console.log('Authentication successful', email, password, data.token);
       } else {
-        console.log("erreur");
-        const errorMessage = await response.text(); // Extract the error message
-        console.log(errorMessage);
-        // Display the error message to the user, e.g., in a notification
+        console.error('Authentication failed:', response.status);
       }
     } catch (error) {
-      // Handle network or request error
-      console.error('Network error:', error);
+      console.error('An error occurred:', error);
     }
   };
 
   return (
-    <div>
-      <form>
-        <input
-          type="text"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          autoComplete='email'
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete=""
-        />
-        <button onClick={handleLogin}>Login</button>
-      </form>
+    <div className='container'>
+      {isLogin ? (
+        <div>
+          <h1>Vous êtes Connecté maintenant</h1>
+          <p>Vous avez l'accès à l'adminPanel</p>
+        </div>
+      ) : (
+        <div>
+          <h1 className='text-center my-3'>Login</h1>
+          <form onSubmit={handleSubmit}>
+            <div className='form-group'>
+              <label className='form-label'>Email:</label>
+              <input
+                type="text"
+                value={email}
+                onChange={handleUsernameChange}
+                placeholder="Enter your username"
+                required
+                className='form-control'
+              />
+            </div>
+            <div className='form-group'>
+              <label className='form-label'>Password:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                placeholder="Enter your password"
+                required
+                className='form-control'
+              />
+            </div>
+            <div>
+              <button type="submit" className='btn btn-primary w-100'>Login</button>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default Login;
