@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import { Link } from 'react-router-dom';
-import Modal from './Modal';
+
 
 const AdminPanel = () => {
   const [batteries, setBatteries] = useState([]);
@@ -22,40 +22,33 @@ const AdminPanel = () => {
       setIsEditing(true);
     }
   };
+ 
   const handleDelete = (batteryId) => {
     // Display the confirmation dialog
-    setShowDeleteConfirmation(true);
-    setDeletingBatteryId(batteryId);
-  };
-  const confirmDelete = () => {
-    // Close the confirmation dialog
-    setShowDeleteConfirmation(false);
-  
-    // Perform a DELETE request to delete the battery with the given ID
-    fetch(`http://localhost:8084/batteries/delete/${deletingBatteryId}`, {
-      method: 'DELETE',
-    })
-      .then((response) => {
-        if (response.ok) {
-          // If the request was successful, you can update the UI accordingly
-          // For example, remove the deleted battery from the state
-          setBatteries((prevBatteries) =>
-            prevBatteries.filter((battery) => battery.numB !== deletingBatteryId)
-          );
-        } else {
-          throw new Error('Delete request failed.');
-        }
+    const confirmDelete = window.confirm('Are you sure you want to delete this battery?');
+    if (confirmDelete) {
+      // Perform a DELETE request to delete the battery with the given ID
+      fetch(`http://localhost:8084/batteries/delete/${batteryId}`, {
+        method: 'DELETE',
       })
-      .catch((error) => {
-        console.error('Error deleting battery:', error);
-      });
+        .then((response) => {
+          if (response.ok) {
+            // If the request was successful, you can update the UI accordingly
+            // For example, remove the deleted battery from the state
+            setBatteries((prevBatteries) =>
+              prevBatteries.filter((battery) => battery.numB !== batteryId)
+            );
+          } else {
+            throw new Error('Delete request failed.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error deleting battery:', error);
+        });
+    }
   };
   
-  const cancelDelete = () => {
-    // Close the confirmation dialog without deleting
-    setShowDeleteConfirmation(false);
-    setDeletingBatteryId(null);
-  };
+  
 
   const handleSaveEdit = () => {
     if (editBattery) {
@@ -163,14 +156,7 @@ const AdminPanel = () => {
               ))}
             </tbody>
           </table>
-          {showDeleteConfirmation && (
-    <Modal
-    isOpen={showDeleteConfirmation} // Pass the isOpen prop
-    message="Are you sure you want to delete this battery?"
-    onConfirm={confirmDelete}
-    onCancel={cancelDelete}
-  />
-  )}
+       
         </div>
       )}
     </div>
