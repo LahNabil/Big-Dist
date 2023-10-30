@@ -8,7 +8,7 @@ import ContactUs from './pages/ContactUs';
 import Liste_Batterie from './pages/Liste_Batterie';
 import BatteryDetails from './pages/BatteryDetails';
 import AdminPanel from './pages/Panel';
-import Edit from './pages/Modifier';
+
 import Ajouter from './pages/Ajouter';
 import Auth from './pages/Auth';
 
@@ -45,9 +45,7 @@ function App() {
             path="/admin/add"
            element={token != null ? <Ajouter /> : <Auth />}
            />
-          <Route path="/admin/edit"
-           element={token != null ? <Edit /> : <Auth/>}
-           />
+          
           
           <Route path="/contactUs" element={<ContactUs />} />
         </Routes>
